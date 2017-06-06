@@ -1,0 +1,38 @@
+package it.uniroma3.service;
+
+import it.uniroma3.model.Author;
+import it.uniroma3.repository.AuthorRepository;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * Created by poldo on 31/05/17.
+ */
+@Service
+public class AuthorService {
+    private final AuthorRepository authorRepository;
+    private final Logger logger = Logger.getLogger(AuthorService.class);
+
+    @Autowired
+    public AuthorService(AuthorRepository authorRepository) {
+        this.authorRepository = authorRepository;
+    }
+
+    public List<Author> getAll() {
+        logger.info("Finding all Authors");
+        return authorRepository.findAll();
+    }
+
+    public List<Author> getAuthorsByName(String name) {
+        logger.info("Get Author by name " + name);
+        return authorRepository.findAuthorsByName(name);
+    }
+
+    public Author addAuthor(Author author) {
+        logger.info("Adding author " + author.getName());
+        return authorRepository.save(author);
+    }
+}
