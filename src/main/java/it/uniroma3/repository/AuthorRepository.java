@@ -11,6 +11,4 @@ public interface AuthorRepository extends GenericRepository<Author, Long> {
 
     public List<Author> findAuthorsByName(String name);
 
-    public List<Author> findAuthorsBySurname(String surname);
-
 }

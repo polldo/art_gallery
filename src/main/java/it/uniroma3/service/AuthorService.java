@@ -22,23 +22,13 @@ public class AuthorService {
     }
 
     public List<Author> getAll() {
-        logger.info("Get all Authors");
+        logger.info("Finding all Authors");
         return authorRepository.findAll();
     }
 
-    public Author getAuthor(Long id) {
-        logger.info("Get Author by id " + id);
-        return authorRepository.findOne(id);
-    }
-
     public List<Author> getAuthorsByName(String name) {
-        logger.info("Get Authors by name " + name);
+        logger.info("Get Author by name " + name);
         return authorRepository.findAuthorsByName(name);
-    }
-
-    public List<Author> getAuthorsBySurname(String surname) {
-        logger.info("Get Authors by surname " + surname);
-        return authorRepository.findAuthorsBySurname(surname);
     }
 
     public Author addAuthor(Author author) {
