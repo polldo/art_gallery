@@ -20,7 +20,7 @@ public class Author {
     @NotNull
     private String surname;
     @NotNull
-    private Date dateOfBirth;
+    private Date birthDate;
     private Date deathDate;
 
     public Author() {}
@@ -49,12 +49,12 @@ public class Author {
         this.surname = surname;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public Date getDeathDate() {
