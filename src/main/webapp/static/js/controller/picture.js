@@ -26,10 +26,10 @@ angular.module('artGallery')
             });
         }
     }])
-    .controller('PictureCtrl', function ($scope, fileUpload) {
+    .controller('PictureCtrl', function ($scope, fileUpload, config) {
         $scope.uploadFile = function() {
             var file = $scope.myFile;
-            var uploadUrl = 'http://localhost:8080/artgallery/pictures/id/' + $scope.imageId;
+            var uploadUrl = config.path + '/pictures/id/' + $scope.imageId;
             fileUpload.uploadFileToUrl(file, uploadUrl)
                 .then(function(){
                 }, function(){

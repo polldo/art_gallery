@@ -46,5 +46,4 @@ angular.module('artGallery')
             else request = AuthorService.getAuthors();
             request.then(okResponse, badResponse);
         }
-
     });
