@@ -45,6 +45,6 @@ angular.module('artGallery')
                         ContentType: "application/json"
                     }
                 });
-            },
+            }
         };
     });

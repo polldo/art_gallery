@@ -42,7 +42,7 @@ public class AuthorService {
     }
 
     public Author addAuthor(Author author) {
-        logger.info("Adding author " + author.getName());
+        logger.info("Add author " + author.getName());
         return authorRepository.save(author);
     }
 }

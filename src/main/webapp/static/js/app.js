@@ -19,6 +19,10 @@ angular
                 templateUrl: 'static/views/painting.html',
                 controller: 'PaintingCtrl'
             })
+            .when('/picture/', {
+                templateUrl: 'static/views/picture.html',
+                controller: 'PictureCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

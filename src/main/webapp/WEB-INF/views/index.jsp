@@ -52,6 +52,7 @@
 <script src="<c:url value='/static/js/controller/home.js' />"></script>
 <script src="<c:url value='/static/js/controller/author.js' />"></script>
 <script src="<c:url value='/static/js/controller/painting.js' />"></script>
+<script src="<c:url value='/static/js/controller/picture.js' />"></script>
     <!-- Service -->
 <script src="<c:url value='/static/js/service/author.js' />"></script>
 <script src="<c:url value='/static/js/service/painting.js' />"></script>

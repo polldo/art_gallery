@@ -20,7 +20,8 @@ public class Painting {
 	@NotNull
 	private String medium;
 	private Integer year;
-	
+
+	public Painting() {}
 	
 	public Long getId() {
 		return id;
