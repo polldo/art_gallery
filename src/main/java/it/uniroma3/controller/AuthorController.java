@@ -19,7 +19,8 @@ public class AuthorController {
     private final AuthorService authorService;
     private final Logger logger = Logger.getLogger(AuthorController.class);
 
-    @Autowired AuthorController(AuthorService authorService) {
+    @Autowired
+    public AuthorController(AuthorService authorService) {
         this.authorService = authorService;
     }
 

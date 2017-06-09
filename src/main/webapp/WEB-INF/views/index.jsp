@@ -25,6 +25,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#!/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                     <li><a ng-href="#!/author"><i class="fa fa-server" aria-hidden="true"></i> Authors</a></li>
+                    <li><a ng-href="#!/painting"><i class="fa fa-server" aria-hidden="true"></i> Paintings</a></li>
                 </ul>
             </div>
         </div>
@@ -50,8 +51,10 @@
 <script src="<c:url value='/static/js/controller/app.js' />"></script>
 <script src="<c:url value='/static/js/controller/home.js' />"></script>
 <script src="<c:url value='/static/js/controller/author.js' />"></script>
+<script src="<c:url value='/static/js/controller/painting.js' />"></script>
     <!-- Service -->
 <script src="<c:url value='/static/js/service/author.js' />"></script>
+<script src="<c:url value='/static/js/service/painting.js' />"></script>
 
 
 </body>
