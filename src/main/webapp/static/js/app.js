@@ -16,6 +16,10 @@ angular
                 controller: 'AuthorCtrl'
             })
             .when('/painting/', {
+                templateUrl: 'static/views/painting_public.html',
+                controller: 'PaintingCtrl'
+            })
+            .when('/painting2/', {
                 templateUrl: 'static/views/painting.html',
                 controller: 'PaintingCtrl'
             })

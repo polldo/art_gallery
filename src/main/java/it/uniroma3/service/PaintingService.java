@@ -25,5 +25,20 @@ public class PaintingService {
 	public Painting getPainting(Long id) {
 		logger.info("Get Painting by id " + id);
 		return paintingRepository.findOne(id);
+	}
+
+	public List<Painting> getPaintingByTitle(String title) {
+		logger.info("Get Painting by title " + title);
+		return paintingRepository.findPaintingsByTitle(title);
+	}
+
+	public List<Painting> getPaintingByMedium(String medium) {
+		logger.info("Get Painting by medium " + medium);
+		return paintingRepository.findPaintingsByMedium(medium);
+	}	
+	
+	public List<Painting> getPaintingByYear(Integer year) {
+		logger.info("Get Painting by year " + year);
+		return paintingRepository.findPaintingsByYear(year);
 	}	
 }

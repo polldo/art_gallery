@@ -28,4 +28,22 @@ public class PaintingController {
         logger.info("Requested Painting by id");
         return paintingService.getPainting(id);
 	}
+	
+	@RequestMapping(value = "/title/{title}", method = RequestMethod.GET)
+	public List<Painting> getPaintingByTitle(@PathVariable String title) {
+        logger.info("Requested Painting by title");
+        return paintingService.getPaintingByTitle(title);
+	}
+	
+	@RequestMapping(value = "/medium/{medium}", method = RequestMethod.GET)
+	public List<Painting> getPaintingByMedium(@PathVariable String medium) {
+        logger.info("Requested Painting by medium");
+        return paintingService.getPaintingByMedium(medium);
+	}
+	
+	@RequestMapping(value = "/year/{year}", method = RequestMethod.GET)
+	public List<Painting> getPaintingByYear(@PathVariable Integer year) {
+        logger.info("Requested Painting by year");
+        return paintingService.getPaintingByYear(year);
+	}
 }

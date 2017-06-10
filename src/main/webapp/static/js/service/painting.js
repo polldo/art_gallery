@@ -30,7 +30,7 @@ angular.module('artGallery')
             getPaintingsByTitle: function (title) {
                 return $http({
                     method: 'GET',
-                    url: path + '/paintings/title/' + name,
+                    url: path + '/paintings/title/' + title,
                     headers: {
                         ContentType: "application/json"
                     }
@@ -40,7 +40,7 @@ angular.module('artGallery')
             getPaintingsByMedium: function (medium) {
                 return $http({
                     method: 'GET',
-                    url: path + '/paintings/medium/' + surname,
+                    url: path + '/paintings/medium/' + medium,
                     headers: {
                         ContentType: "application/json"
                     }
@@ -50,7 +50,7 @@ angular.module('artGallery')
             getPaintingsByYear: function (year) {
                 return $http({
                     method: 'GET',
-                    url: path + '/paintings/year/' + surname,
+                    url: path + '/paintings/year/' + year,
                     headers: {
                         ContentType: "application/json"
                     }

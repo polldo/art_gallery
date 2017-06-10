@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,6 +21,9 @@ public class Painting {
 	@NotNull
 	private String medium;
 	private Integer year;
+	
+	@ManyToOne
+	private Author author;
 
 	public Painting() {}
 	
@@ -69,8 +73,14 @@ public class Painting {
 	
 	public void setYear(Integer year) {
 		this.year = year;
+	}
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
 	} 
-	
-	
 	
 }
