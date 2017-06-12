@@ -48,6 +48,7 @@ public class AuthorService {
 
     public void removeAuthorById(Long id) {
         logger.info("Remove author by id " + id);
+
         authorRepository.deleteById(id);
     }
 }

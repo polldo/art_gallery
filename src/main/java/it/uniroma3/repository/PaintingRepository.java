@@ -6,12 +6,14 @@ import java.util.List;
 
 public interface PaintingRepository extends GenericRepository<Painting, Long> {
 
-	List<Painting> findPaintingsByTitle(String title);
+	public List<Painting> findPaintingsByTitle(String title);
 
-	List<Painting> findPaintingsByMedium(String medium);
+	public List<Painting> findPaintingsByMedium(String medium);
 
-	List<Painting> findPaintingsByYear(Integer year);
+	public List<Painting> findPaintingsByYear(Integer year);
 
-	List<Painting> findPaintingsByAuthor_Id(Long id);
+	public List<Painting> findPaintingsByAuthor_Id(Long id);
+
+	public void deletePaintingsByAuthor_Id(Long id);
 
 }

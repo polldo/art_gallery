@@ -46,4 +46,5 @@ public class PaintingService {
 		logger.info("Get Painting by Author " + id);
 		return paintingRepository.findPaintingsByAuthor_Id(id);
 	}
+
 }

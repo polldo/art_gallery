@@ -8,7 +8,7 @@ angular.module('artGallery')
             selected: "no filter",
             availableFilters: ["no filter", "name", "surname"]
         };
-        $scope.searchParam = undefined;
+        $scope.searchParam = "";
         $scope.searchAuthors = loadAuthorList;
 
         message.eraseAlerts();
@@ -23,7 +23,11 @@ angular.module('artGallery')
         }
 
         function getSearchParam() {
-            return $scope.searchParam;
+            var param = $scope.searchParam;
+            if (param === "") {
+                return "undefined";
+            }
+            return param;
         }
 
         function setAuthorList(newAuthorList) {
