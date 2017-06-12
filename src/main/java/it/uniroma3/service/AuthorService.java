@@ -45,4 +45,9 @@ public class AuthorService {
         logger.info("Add author " + author.getName());
         return authorRepository.save(author);
     }
+
+    public void removeAuthorById(Long id) {
+        logger.info("Remove author by id " + id);
+        authorRepository.deleteById(id);
+    }
 }

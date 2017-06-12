@@ -45,6 +45,29 @@ angular.module('artGallery')
                         ContentType: "application/json"
                     }
                 });
+            },
+
+            addAuthor: function (author) {
+                return $http({
+                    method: 'POST',
+                    url: path + '/authors/',
+                    data: author,
+                    headers: {
+                        ContentType: "application/json",
+                        dataType: "json"
+                    }
+                });
+            },
+
+            removeAuthorById: function (id) {
+                return $http({
+                    method: 'DELETE',
+                    url: path + '/authors/id/' + id,
+                    headers: {
+                        ContentType: "application/json"
+                    }
+                });
             }
+
         };
     });

@@ -10,7 +10,7 @@
     <mvc:resources mapping="/static/**" location="/static/"/>
 
     <mvc:cors>
-        <mvc:mapping path="/**"/>
+        <mvc:mapping path="/**" allowed-methods="GET, POST, DELETE, PUT"/>
     </mvc:cors>
 
     <bean id="viewResolver"

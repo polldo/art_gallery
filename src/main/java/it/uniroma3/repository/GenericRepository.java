@@ -2,6 +2,7 @@ package it.uniroma3.repository;
 
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,6 +16,9 @@ public interface GenericRepository<T, ID extends Serializable> extends Repositor
     public T save(T entity);
 
     public void delete(T entity);
+
+    @Transactional
+    public void deleteById(ID id);
 
     public List<T> findAll();
 

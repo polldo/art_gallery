@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+
+    <form>
+        <label for="inputName" class="col-sm-3 col-md-3 control-label">Name</label>
+        <div class="col-sm-9 col-md-9">
+            <input type="text" class="form-control" id="inputName" name="inputName" placeholder="" ng-model="newName">
+        </div>
+        <label for="inputSurname" class="col-sm-3 col-md-3 control-label">Surname</label>
+        <div class="col-sm-9 col-md-9">
+            <input type="text" class="form-control" id="inputSurname" name="inputSurname" placeholder="" ng-model="newSurname">
+        </div>
+        <label for="inputBirth" class="col-sm-3 col-md-3 control-label">BirthDate</label>
+        <div class="col-sm-9 col-md-9" class="form-control" id="inputBirth" name="inputBirth">
+            <label for="inputMonth" class="control-label">Month</label>
+            <input type="number" min="1" max="12" id="inputMonth" name="inputMonth" placeholder="" ng-model="newMonth">
+            <label for="inputYear" class="control-label">Year</label>
+            <input type="number" min="0" max="3000" id="inputYear" name="inputYear" placeholder="" ng-model="newYear">
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
+

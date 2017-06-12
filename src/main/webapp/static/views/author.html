@@ -1,15 +1,58 @@
-<form class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search" ng-model="searchParam">
+<form>
+<div class="panel panel-default">
+    <div class="bottom-spacer pull-right">
+        <button class="btn" uib-tooltip="Add new device" ng-click="openModifyModal()"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
     </div>
-    <label for="repeatSelect"> by: </label>
-    <select name="repeatSelect" id="repeatSelect" ng-model="authorFilter.selected">
-        <option ng-repeat="filter in authorFilter.availableFilters" value="{{filter}}">{{filter}}</option>
-    </select>
-    <button type="submit" class="btn btn-default" ng-click="searchAuthors()">Submit</button>
+    <div class="panel-heading">Authors</div>
+    <div class="panel-body">
+        <div ng-controller="AlertCtrl">
+            <div uib-alert ng-repeat="alt in alerts" ng-class="'alert-' + (alt.type || 'warning')" close="closeAlert($index)">
+                {{alt.message}}
+            </div>
+        </div>
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" ng-model="searchParam">
+            </div>
+            <label for="repeatSelect"> by: </label>
+            <select name="repeatSelect" id="repeatSelect" ng-model="authorFilter.selected">
+                <option ng-repeat="filter in authorFilter.availableFilters" value="{{filter}}">{{filter}}</option>
+            </select>
+            <button type="submit" class="btn btn-default" ng-click="searchAuthors()">Submit</button>
+        </form>
+    </div>
+    <table class="table table-bordered table-condensed" ng-show="authorList.length">
+        <thead>
+        <tr class="grey-header">
+            <th>#</th>
+            <th>Surname</th>
+            <th>Name</th>
+            <th>Birth</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="author in authorList">
+            <th scope="row">{{$index+1}}</th>
+            <td>{{author.surname}}</td>
+            <td class="col-md-4">{{author.name}}</td>
+            <td>{{author.birthDate | date:"yyyy"}}</td>
+            <td>
+                <a href="" ng-click="openModifyModal(author)" class="action-icon" uib-tooltip="Edit"><i class="fa fa-edit fa-lg edit" aria-hidden="true"></i></a>
+                <a href="" ng-click="openDeleteModal(author)" class="action-icon" uib-tooltip="Delete"><i class="fa fa-trash fa-lg delete" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <li ng-hide="authorList.length">No Authors found</li>
+</div>
 </form>
-<div class="row">
+<!--
+<div class="row" ng-show="false">
     <div class="col-md-12">
+        <div class="bottom-spacer pull-right">
+            <button class="btn" uib-tooltip="Add new device"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+        </div>
         <table class="table table-bordered table-condensed">
             <thead>
             <tr class="grey-header">
@@ -33,3 +76,4 @@
         <li ng-hide="authorList.length">No Authors found</li>
     </div>
 </div>
+-->
