@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-bordered table-condensed">
+			<thead>
+            <tr class="grey-header">
+                <th>#</th>
+                <th>Sala</th>
+            </tr>
+            </thead>
+            <tbody>
+            	<tr ng-repeat="room in roomList">       
+            		<th scope="row">{{$index+1}}</th>	
+             		<td>{{room.name}}</td>
+                	<td></td>
+           		</tr>
+            </tbody>
+		</table>
+	</div>
+</div>

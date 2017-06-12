@@ -24,6 +24,9 @@ public class Painting {
 	
 	@ManyToOne
 	private Author author;
+	
+	@ManyToOne
+	private Room room;
 
 	public Painting() {}
 	
@@ -81,6 +84,14 @@ public class Painting {
 
 	public void setAuthor(Author author) {
 		this.author = author;
+	}
+
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
 	} 
 	
 }

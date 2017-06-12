@@ -13,7 +13,8 @@ public class PaintingController {
 	private final PaintingService paintingService;
 	private final Logger logger = Logger.getLogger(PaintingController.class);
 	
-	@Autowired PaintingController (PaintingService paintingService) {
+	@Autowired 
+	public PaintingController (PaintingService paintingService) {
 		this.paintingService = paintingService;
 	}
 	
