@@ -92,7 +92,22 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-        <!-- Webjars angularjs -->
+        <!-- Webjars angularjs and bootstrap -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7-1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>fontawesome</artifactId>
+            <version>4.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular-bootstrap</artifactId>
+            <version>2.5.0</version>
+        </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>angularjs</artifactId>
@@ -104,9 +119,19 @@
             <version>${angular.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>3.3.7-1</version>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular-animate</artifactId>
+            <version>${angular.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular-touch</artifactId>
+            <version>${angular.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular-aria</artifactId>
+            <version>${angular.version}</version>
         </dependency>
         <!-- Dependency for File upload -->
         <dependency>

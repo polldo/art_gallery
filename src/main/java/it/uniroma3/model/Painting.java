@@ -21,7 +21,6 @@ public class Painting {
 	@NotNull
 	private String medium;
 	private Integer year;
-	
 	@ManyToOne
 	private Author author;
 	

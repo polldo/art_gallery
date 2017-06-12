@@ -8,7 +8,7 @@ angular.module('artGallery')
             selected: "no filter",
             availableFilters: ["no filter", "title", "medium", "year"]
         };
-        $scope.searchParam = undefined;
+        $scope.searchParam = "";
         $scope.searchPaintings = loadPaintingList;
 
         loadPaintingList();
@@ -22,7 +22,11 @@ angular.module('artGallery')
         }
 
         function getSearchParam() {
-            return $scope.searchParam;
+            var param = $scope.searchParam;
+            if (param === "") {
+                return "undefined";
+            }
+            return param;
         }
 
         function setPaintingList(newPaintingList) {

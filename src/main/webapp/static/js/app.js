@@ -3,7 +3,11 @@
 
 angular
     .module('artGallery', [
-        'ngRoute'
+        'ngAnimate',
+        'ngAria',
+        'ngRoute',
+        'ngTouch',
+        'ui.bootstrap'
     ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -16,11 +20,11 @@ angular
                 controller: 'AuthorCtrl'
             })
             .when('/painting/', {
-                templateUrl: 'static/views/painting_public.html',
+                templateUrl: 'static/views/painting.html',
                 controller: 'PaintingCtrl'
             })
-            .when('/painting2/', {
-                templateUrl: 'static/views/painting.html',
+            .when('/painting-admin/', {
+                templateUrl: 'static/views/painting-admin.html',
                 controller: 'PaintingCtrl'
             })
             .when('/room/', {

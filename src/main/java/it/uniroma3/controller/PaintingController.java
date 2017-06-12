@@ -47,4 +47,10 @@ public class PaintingController {
         logger.info("Requested Painting by year");
         return paintingService.getPaintingByYear(year);
 	}
+
+	@RequestMapping(value = "/author/{id}", method = RequestMethod.GET)
+	public List<Painting> getPaintingById(@PathVariable Long id) {
+		logger.info("Requested Painting by Author");
+		return paintingService.getPaintingByAuthorId(id);
+	}
 }

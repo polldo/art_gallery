@@ -40,5 +40,11 @@ public class PaintingService {
 	public List<Painting> getPaintingByYear(Integer year) {
 		logger.info("Get Painting by year " + year);
 		return paintingRepository.findPaintingsByYear(year);
-	}	
+	}
+
+	public List<Painting> getPaintingByAuthorId(Long id) {
+		logger.info("Get Painting by Author " + id);
+		return paintingRepository.findPaintingsByAuthor_Id(id);
+	}
+
 }
