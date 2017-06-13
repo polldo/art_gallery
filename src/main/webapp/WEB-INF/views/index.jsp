@@ -5,6 +5,7 @@
     <title>Art Gallery</title>
     <link rel="stylesheet" href="<c:url value='/webjars/bootstrap/3.3.7-1/css/bootstrap.css' />">
     <link rel="stylesheet" href="<c:url value='/webjars/fontawesome/4.7.0/css/font-awesome.css' />">
+    <link rel="stylesheet" href="<c:url value='/static/css/custom.css' />">
 </head>
 
 <body ng-app="artGallery" ng-controller="AppCtrl" class="ng-cloak">
@@ -67,6 +68,7 @@
 <script src="<c:url value='/static/js/controller/alert.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/add-author.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/delete-author.js' />"></script>
+<script src="<c:url value='/static/js/controller/modal/open-picture.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/modify-painting.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/delete-painting.js' />"></script>
     <!-- Service -->
