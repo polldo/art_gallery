@@ -2,6 +2,7 @@ package it.uniroma3.controller;
 
 import it.uniroma3.model.Author;
 import it.uniroma3.service.AuthorService;
+import it.uniroma3.service.PaintingService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +20,13 @@ import java.util.List;
 @RequestMapping("/authors")
 public class AuthorController {
     private final AuthorService authorService;
+    private final PaintingService paintingService;
     private final Logger logger = Logger.getLogger(AuthorController.class);
 
     @Autowired
-    public AuthorController(AuthorService authorService) {
+    public AuthorController(AuthorService authorService, PaintingService paintingService) {
         this.authorService = authorService;
+        this.paintingService = paintingService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -74,6 +77,7 @@ public class AuthorController {
     @RequestMapping(value = "/id/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> removeAuthorById(@PathVariable Long id) {
         logger.info("Request to remove Author");
+        paintingService.removePaintingsByAuthorId(id);
         authorService.removeAuthorById(id);
         return ResponseEntity.ok().build();
     }

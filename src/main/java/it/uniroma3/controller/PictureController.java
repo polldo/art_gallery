@@ -52,7 +52,7 @@ public class PictureController {
             logger.error(e.toString());
             return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.ok("Ok");
+        return ResponseEntity.ok().build();
     }
 
 }

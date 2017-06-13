@@ -56,5 +56,28 @@ angular.module('artGallery')
                     }
                 });
             },
+
+            addPainting: function (painting) {
+                return $http({
+                    method: 'POST',
+                    url: path + '/paintings/',
+                    data: painting,
+                    headers: {
+                        ContentType: "application/json",
+                        dataType: "json"
+                    }
+                });
+            },
+
+
+            removePaintingById: function (id) {
+                return $http({
+                    method: 'DELETE',
+                    url: path + '/paintings/id/' + id,
+                    headers: {
+                        ContentType: "application/json"
+                    }
+                });
+            }
         };
     });

@@ -25,7 +25,7 @@ angular
             })
             .when('/painting-admin/', {
                 templateUrl: 'static/views/painting-admin.html',
-                controller: 'PaintingCtrl'
+                controller: 'PaintingAdminCtrl'
             })
             .when('/room/', {
                 templateUrl: 'static/views/room.html',

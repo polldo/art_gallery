@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Painting {
@@ -13,13 +14,16 @@ public class Painting {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@NotNull
+	@Size(min=1)
 	private String title;
 	@NotNull
 	private Integer height;
 	@NotNull
 	private Integer width;
 	@NotNull
+	@Size(min=1)
 	private String medium;
+	@NotNull
 	private Integer year;
 	@ManyToOne
 	private Author author;

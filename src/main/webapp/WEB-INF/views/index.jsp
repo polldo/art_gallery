@@ -61,11 +61,14 @@
 <script src="<c:url value='/static/js/controller/home.js' />"></script>
 <script src="<c:url value='/static/js/controller/author.js' />"></script>
 <script src="<c:url value='/static/js/controller/painting.js' />"></script>
+<script src="<c:url value='/static/js/controller/painting-admin.js' />"></script>
 <script src="<c:url value='/static/js/controller/picture.js' />"></script>
 <script src="<c:url value='/static/js/controller/room.js' />"></script>
 <script src="<c:url value='/static/js/controller/alert.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/add-author.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/delete-author.js' />"></script>
+<script src="<c:url value='/static/js/controller/modal/modify-painting.js' />"></script>
+<script src="<c:url value='/static/js/controller/modal/delete-painting.js' />"></script>
     <!-- Service -->
 <script src="<c:url value='/static/js/service/author.js' />"></script>
 <script src="<c:url value='/static/js/service/painting.js' />"></script>

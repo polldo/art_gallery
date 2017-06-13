@@ -47,4 +47,18 @@ public class PaintingService {
 		return paintingRepository.findPaintingsByAuthor_Id(id);
 	}
 
+	public Painting addPainting(Painting painting) {
+		logger.info("Add painting " + painting.getTitle());
+		return paintingRepository.save(painting);
+	}
+
+	public void removePaintingById(Long id) {
+		logger.info("Remove Painting by id");
+		paintingRepository.deleteById(id);
+	}
+
+	public void removePaintingsByAuthorId(Long id) {
+		logger.info("Remove Paintings by Author " + id);
+		paintingRepository.deletePaintingsByAuthor_Id(id);
+	}
 }

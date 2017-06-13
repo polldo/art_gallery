@@ -35,4 +35,9 @@ public class PictureService {
         }
         return returnedPicture;
     }
+
+    public void RemovePicturesByPaintingId(Long id) {
+        logger.info("Remove pictures by painting id " + id);
+        pictureRepository.deletePicturesByPainting_Id(id);
+    }
 }

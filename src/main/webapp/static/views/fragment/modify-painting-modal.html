@@ -1,0 +1,110 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Title">Title</label>
+                <div class="col-md-4">
+                    <input id="Title" name="Title" type="text" placeholder="" class="form-control input-md" ng-model="newTitle" required="">
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="height">Height</label>
+                <div class="col-md-2">
+                    <input id="height" name="height" type="text" placeholder="" class="form-control input-md" ng-model="newHeight">
+                </div>
+
+                <label class="col-md-1 control-label" for="width">Width</label>
+                <div class="col-md-2">
+                    <input id="width" name="width" type="text" placeholder="" class="form-control input-md" ng-model="newWidth">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Medium">Medium</label>
+                <div class="col-md-4">
+                    <input id="Medium" name="Medium" type="text" placeholder="" class="form-control input-md" ng-model="newMedium" required="">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="year">Year</label>
+                <div class="col-md-4">
+                    <input type="number" min="0" max="3000" id="year" name="year" placeholder="" class="form-control input-md" ng-model="newYear">
+                </div>
+            </div>
+
+            <!-- Prepended text-->
+            <div class="form-group" ng-show="hasAuthor()">
+                <label class="col-md-1 control-label" for="currentauthor"></label>
+                <div class="col-md-7">
+                    <div class="input-group">
+                        <span class="input-group-addon">Current Author</span>
+                        <input id="currentauthor" name="currentauthor" class="form-control" placeholder="{{oldAuthor.name + '  ' + oldAuthor.surname}}" type="text">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectautor">Change Author</label>
+                <div class="col-md-4">
+                    <select name="selectautor" class="form-control" id="selectautor" ng-model="paintingAuthor.selected">
+                        <option ng-repeat="author in paintingAuthor.availableAuthors" ng-value="author">{{author.name + " " + author.surname}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Prepended text-->
+            <div class="form-group" ng-show="hasRoom()">
+                <label class="col-md-1 control-label" for="currentroom"></label>
+                <div class="col-md-7">
+                    <div class="input-group">
+                        <span class="input-group-addon">Current Room</span>
+                        <input id="currentroom" name="currentroom" class="form-control" placeholder="{{oldRoom.name}}" type="text">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectroom">Change Room</label>
+                <div class="col-md-4">
+                    <select name="selectroom" class="form-control" id="selectroom" ng-model="paintingRoom.selected">
+                        <option ng-repeat="room in paintingRoom.availableRooms" ng-value="room">{{room.name}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Picture input-->
+            <div class="form-group jumbotron">
+                <label class="col-md-4 control-label" for="Medium">Current Picture</label>
+                <div class="col-md-8">
+                    <img ng-src="{{getPaintingSource()}}" alt="image" height="100" width="150"
+                         onerror="this.src='/artgallery/static/images/default.png'"/>
+                </div>
+                <input type="file" file-model="newFile"/>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
+
