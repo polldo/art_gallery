@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('artGallery')
-    .controller('AuthorCtrl', function ($scope, $uibModal, AuthorService, message) {
+    .controller('AuthorCtrl', function ($scope, $uibModal, AuthorService, PaintingService, message, fileUpload) {
 
         $scope.authorList = undefined;
         $scope.authorFilter = {
@@ -34,14 +34,8 @@ angular.module('artGallery')
             $scope.authorList = newAuthorList;
         }
 
-        function okResponse(response) {
-            setAuthorList(response.data);
-            message.eraseAlerts();
-        }
-
-        function badResponse(response, details) {
-            //here a boolean var has to be changed
-            message.addAlert("danger", details);
+        function responseToAlert(alertType, details) {
+            message.addAlert(alertType, details);
         }
 
         function loadAuthorList() {
@@ -51,9 +45,22 @@ angular.module('artGallery')
             if (filter === "name") request = AuthorService.getAuthorsByName(param);
             else if (filter === "surname") request = AuthorService.getAuthorsBySurname(param);
             else request = AuthorService.getAuthors();
-            request.then(okResponse,
+            request.then(function (response) {
+                    setAuthorList(response.data);
+                    //responseToAlert("success", "Authors loaded");
+                },
                 function (response) {
-                    badResponse(response, "Error while loading Authors")
+                    responseToAlert("danger", "Error while loading Authors")
+                });
+        }
+
+        function uploadFile(author, file, okDetails) {
+            fileUpload.uploadPortrait(file, author.id)
+                .then(function (resp) {
+                    responseToAlert("success", okDetails);
+                    loadAuthorList();
+                }, function (resp) {
+                    responseToAlert("danger", "Failed to upload author picture");
                 });
         }
 
@@ -75,16 +82,30 @@ angular.module('artGallery')
                 }
             });
 
-            modalInstance.result.then(function (author) {
-                var details;
-                if (author.id === undefined)
-                    details = "Unable to add this Author";
-                else
-                    details = "Unable to modify this Author";
+            modalInstance.result.then(function (upload) {
+                var badDetails, okDetails;
+                var author = upload.author;
+                var file = upload.file;
+                if (author.id === undefined) {
+                    badDetails = "Unable to add this Author";
+                    okDetails = "Author added"
+                }
+                else {
+                    badDetails = "Unable to modify this Author";
+                    okDetails = "Author modified";
+                }
                 AuthorService.addAuthor(author)
-                    .then(loadAuthorList,
+                    .then(function (response) {
+                            if (file === undefined) {
+                                responseToAlert("success", okDetails);
+                                loadAuthorList();
+                            } else {
+                                var authorAdded = response.data;
+                                uploadFile(authorAdded, file, okDetails);
+                            }
+                        },
                         function (response) {
-                            badResponse(response, details)
+                            responseToAlert("danger", badDetails);
                         });
             }, function () {
             });
@@ -104,9 +125,62 @@ angular.module('artGallery')
 
             modalInstance.result.then(function (author) {
                 AuthorService.removeAuthorById(author.id)
-                    .then(loadAuthorList,
+                    .then(function (response) {
+                            responseToAlert("success", "Author deleted");
+                            loadAuthorList();
+                        },
                         function (response) {
-                            badResponse(response, "Unable to delete this Author")
+                            responseToAlert("danger", "Unable to delete this Author")
+                        });
+            }, function () {
+            });
+        };
+
+        function uploadPainting(painting, file) {
+            fileUpload.uploadPicture(file, painting.id)
+                .then(function (resp) {
+                    responseToAlert("success", "Painting uploaded")
+                }, function (resp) {
+                    responseToAlert("danger", "Failed to upload picture");
+                });
+        }
+
+        //Modify Painting Modal
+        $scope.openModifyPaintingModal = function (author) {
+            var painting = {
+                title: '',
+                height: 0,
+                width: 0,
+                medium: '',
+                year: 1990,
+                author: author,
+                room: undefined
+            };
+            var modalInstance = $uibModal.open({
+                templateUrl: "static/views/fragment/modify-painting-modal.html",
+                controller: "ModifyPaintingCtrl",
+                resolve: {
+                    painting: function () {
+                        return angular.copy(painting);
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (upload) {
+                var painting = upload.painting;
+                var file = upload.file;
+                var badDetails = "Unable to add this Painting";
+                var okDetails = "Painting added";
+                PaintingService.addPainting(painting)
+                    .then(function (response) {
+                            responseToAlert("success", okDetails);
+                            if (file !== undefined) {
+                                var addedPainting = response.data;
+                                uploadPainting(addedPainting, file);
+                            }
+                        },
+                        function (response) {
+                            responseToAlert("danger", badDetails);
                         });
             }, function () {
             });

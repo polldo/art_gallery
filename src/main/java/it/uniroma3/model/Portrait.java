@@ -4,20 +4,22 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
- * Created by poldo on 09/06/17.
+ * Created by poldo on 14/06/17.
  */
 @Entity
-public class Picture {
+public class Portrait {
     @Id
     private Long id;
+
     @OneToOne(fetch = FetchType.LAZY)
     @MapsId
-    private Painting painting;
+    private Author author;
+
     @NotNull
     @Lob
     private byte[] bytes;
 
-    public Picture() {}
+    public Portrait() {}
 
     public Long getId() {
         return id;
@@ -35,11 +37,11 @@ public class Picture {
         this.bytes = bytes;
     }
 
-    public Painting getPainting() {
-        return painting;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setPainting(Painting painting) {
-        this.painting = painting;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

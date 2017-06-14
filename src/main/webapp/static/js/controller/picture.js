@@ -17,14 +17,23 @@ angular.module('artGallery')
         };
     }])
     .service('fileUpload', ['$http', 'config', function ($http, config) {
-        this.uploadFileToUrl = function (file, imageId) {
-            var uploadUrl = config.path + '/pictures/id/' + imageId;
+        function uploadFileToUrl (file, uploadUrl) {
             var fd = new FormData();
             fd.append('file', file);
             return $http.post(uploadUrl, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
             });
+        }
+
+        this.uploadPicture = function(picture, imageId){
+            var uploadUrl = config.path + '/pictures/id/' + imageId;
+            return uploadFileToUrl(picture, uploadUrl);
+        };
+
+        this.uploadPortrait = function(portrait, imageId){
+            var uploadUrl = config.path + '/portraits/id/' + imageId;
+            return uploadFileToUrl(portrait, uploadUrl);
         }
     }])
     .controller('PictureCtrl', function ($scope, fileUpload) {

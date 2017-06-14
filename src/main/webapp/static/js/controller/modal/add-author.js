@@ -15,11 +15,21 @@ angular.module('artGallery')
             $scope.newMonth = parseInt($filter('date')(birthDate, "MM"), 10);
         }
 
+        $scope.getPortraitSource = function () {
+            if (author.id !== undefined)
+                return "/artgallery/portraits/id/" + author.id;
+            return "/artgallery/static/images/default-profile.jpg";
+        };
+
         $scope.ok = function () {
             $scope.author.name = $scope.newName;
             $scope.author.surname = $scope.newSurname;
             $scope.author.birthDate = new Date($scope.newYear + " " + $scope.newMonth);
-            $uibModalInstance.close($scope.author);
+            var upload = {
+                author: $scope.author,
+                file: $scope.newFile
+            };
+            $uibModalInstance.close(upload);
         };
 
         $scope.cancel = function () {

@@ -34,14 +34,8 @@ angular.module('artGallery')
             $scope.paintingList = newPaintingList;
         }
 
-        function okResponse(response) {
-            setPaintingList(response.data);
-            message.eraseAlerts();
-        }
-
-        function badResponse(response, details) {
-            //here a boolean var has to be changed
-            message.addAlert("danger", details);
+        function responseToAlert(alertType, details) {
+            message.addAlert(alertType, details);
         }
 
         function loadPaintingList() {
@@ -52,13 +46,22 @@ angular.module('artGallery')
             else if (filter === "medium") request = PaintingService.getPaintingsByMedium(param);
             else if (filter === "year") request = PaintingService.getPaintingsByYear(param);
             else request = PaintingService.getPaintings();
-            request.then(okResponse, badResponse);
+            request.then(function (response) {
+                    setPaintingList(response.data);
+                    //responseToAlert("success", "Paintings loaded");
+                },
+                function (response) {
+                    responseToAlert("danger", "Error while loading Paintings")
+                });
         }
 
-        function uploadFile(painting, file) {
-            fileUpload.uploadFileToUrl(file, painting.id)
-                .then(loadPaintingList, function (resp) {
-                    badResponse(resp, "Failed to upload picture");
+        function uploadFile(painting, file, okDetails) {
+            fileUpload.uploadPicture(file, painting.id)
+                .then(function (resp) {
+                    responseToAlert("success", okDetails);
+                    loadPaintingList();
+                }, function (resp) {
+                    responseToAlert("danger", "Failed to upload painting picture");
                 });
         }
 
@@ -87,22 +90,27 @@ angular.module('artGallery')
             modalInstance.result.then(function (upload) {
                 var painting = upload.painting;
                 var file = upload.file;
-                var details;
-                if (painting.id === undefined)
-                    details = "Unable to add this Painting";
-                else
-                    details = "Unable to modify this Painting";
+                var badDetails, okDetails;
+                if (painting.id === undefined) {
+                    badDetails = "Unable to add this Painting";
+                    okDetails = "Painting added";
+                }
+                else {
+                    badDetails = "Unable to modify this Painting";
+                    okDetails = "Painting modified";
+                }
                 PaintingService.addPainting(painting)
                     .then(function (response) {
+                            responseToAlert("success", okDetails);
                             if (file !== undefined) {
                                 var addedPainting = response.data;
-                                uploadFile(addedPainting, file);
+                                uploadFile(addedPainting, file, okDetails);
                             }
                             else
                                 loadPaintingList();
                         },
                         function (response) {
-                            badResponse(response, details)
+                            responseToAlert("danger", badDetails);
                         });
             }, function () {
             });
@@ -122,9 +130,12 @@ angular.module('artGallery')
 
             modalInstance.result.then(function (painting) {
                 PaintingService.removePaintingById(painting.id)
-                    .then(loadPaintingList,
+                    .then(function (response) {
+                            responseToAlert("success", "Painting deleted");
+                            loadPaintingList();
+                        },
                         function (response) {
-                            badResponse(response, "Unable to delete this Painting")
+                            responseToAlert("success", "Unable to delete this Painting");
                         });
             }, function () {
             });

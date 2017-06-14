@@ -2,7 +2,7 @@
     <h3 class="modal-title" id="modal-title">{{title}}</h3>
 </div>
 <div class="modal-body" id="modal-body">
-
+<!--
     <form>
         <label for="inputName" class="col-sm-3 col-md-3 control-label">Name</label>
         <div class="col-sm-9 col-md-9">
@@ -19,7 +19,56 @@
             <label for="inputYear" class="control-label">Year</label>
             <input type="number" min="0" max="3000" id="inputYear" name="inputYear" placeholder="" ng-model="newYear">
         </div>
+    </form> -->
+
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Name input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nameinput">Name</label>
+                <div class="col-md-4">
+                    <input id="nameinput" name="nameinput" type="text" placeholder="Author name" class="form-control input-md" ng-model="newName">
+
+                </div>
+            </div>
+
+            <!-- Surname input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="surnameinput">Surname</label>
+                <div class="col-md-4">
+                    <input id="surnameinput" name="surnameinput" type="text" placeholder="surname" class="form-control input-md" ng-model="newSurname">
+
+                </div>
+            </div>
+
+            <!-- Birthdate input-->
+            <label class="col-md-2 control-label" for="birthdateinput">Birthdate</label>
+            <div class="form-group" id="birthdateinput" name="birthdateinput">
+                <label class="col-md-2 control-label" for="monthinput">Month</label>
+                <div class="col-md-2">
+                    <input id="monthinput" name="monthinput" type="number" min="1" max="12" placeholder="" class="form-control input-md" ng-model="newMonth">
+                    <span class="help-block">birthdate</span>
+                </div>
+                <label class="col-md-1 control-label" for="yearinput">Year</label>
+                <div class="col-md-2">
+                    <input id="yearinput" name="yearinput" type="number" min="0" max="3000" placeholder="" class="form-control input-md" ng-model="newYear">
+                </div>
+            </div>
+
+            <!-- Picture input-->
+            <div class="form-group jumbotron">
+                <label class="col-md-4 control-label">Current Author Picture</label>
+                <div class="col-md-8">
+                    <img ng-src="{{getPortraitSource()}}" alt="image" height="100" width="150"
+                         onerror="this.src='/artgallery/static/images/default-profile.jpg'"/>
+                </div>
+                <input type="file" file-model="newFile"/>
+            </div>
+
+        </fieldset>
     </form>
+
 
 </div>
 <div class="modal-footer">

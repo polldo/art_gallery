@@ -37,8 +37,8 @@
             <tbody>
             <tr ng-repeat="painting in paintingList">
                 <th scope="row">{{$index+1}}</th>
-                <td><img ng-src="/artgallery/pictures/id/{{painting.id}}" alt="image"
-                         onerror="this.src='/artgallery/static/images/default.png'" width="50" height="50"/></td>
+                <td class="col-md-1"><img ng-src="/artgallery/pictures/id/{{painting.id}}" alt="image"
+                         onerror="this.src='/artgallery/static/images/default.png'" width="30" height="30"/></td>
                 <td>{{painting.title}}</td>
                 <td>{{painting.width + "x" + painting.height}}</td>
                 <td>{{painting.medium}}</td>

@@ -25,6 +25,7 @@
             <thead>
             <tr class="grey-header">
                 <th>#</th>
+                <th>Picture</th>
                 <th>Surname</th>
                 <th>Name</th>
                 <th>Birth</th>
@@ -34,12 +35,16 @@
             <tbody>
             <tr ng-repeat="author in authorList">
                 <th scope="row">{{$index+1}}</th>
+                <td class="col-md-1"><img ng-src="/artgallery/portraits/id/{{author.id}}" alt="image"
+                         onerror="this.src='/artgallery/static/images/default-profile.jpg'" width="25" height="25"/>
+                </td>
                 <td>{{author.surname}}</td>
                 <td class="col-md-4">{{author.name}}</td>
                 <td>{{author.birthDate | date:"yyyy"}}</td>
                 <td>
                     <a href="" ng-click="openModifyModal(author)" class="action-icon" uib-tooltip="Edit"><i class="fa fa-edit fa-lg edit" aria-hidden="true"></i></a>
                     <a href="" ng-click="openDeleteModal(author)" class="action-icon" uib-tooltip="Delete"><i class="fa fa-trash fa-lg delete" aria-hidden="true"></i></a>
+                    <a href="" ng-click="openModifyPaintingModal(author)" class="action-icon" uib-tooltip="Add Painting"><i class="fa fa-picture-o fa-lg edit" aria-hidden="true"></i></a>
                 </td>
             </tr>
             </tbody>
@@ -47,33 +52,3 @@
         <p ng-hide="authorList.length">No Authors found</p>
     </div>
 </form>
-<!--
-<div class="row" ng-show="false">
-    <div class="col-md-12">
-        <div class="bottom-spacer pull-right">
-            <button class="btn" uib-tooltip="Add new device"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
-        </div>
-        <table class="table table-bordered table-condensed">
-            <thead>
-            <tr class="grey-header">
-                <th>#</th>
-                <th>Surname</th>
-                <th>Name</th>
-                <th>Birth</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="author in authorList">
-                <th scope="row">{{$index+1}}</th>
-                <td>{{author.surname}}</td>
-                <td class="col-md-4">{{author.name}}</td>
-                <td>{{author.birthDate | date:"yyyy"}}</td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-        <li ng-hide="authorList.length">No Authors found</li>
-    </div>
-</div>
--->
