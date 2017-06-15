@@ -4,8 +4,17 @@ angular.module('artGallery')
     .factory('AuthorService', function ($http, config) {
 
         var path = config.path;
+        var currentAuthor;
 
         return {
+
+            getCurrentAuthor: function () {
+                return currentAuthor;
+            },
+
+            setCurrentAuthor: function (author) {
+                currentAuthor = author;
+            },
 
             getAuthor: function (id) {
                 return $http({

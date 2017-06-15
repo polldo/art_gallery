@@ -57,6 +57,16 @@ angular.module('artGallery')
                 });
             },
 
+            getPaintingsByAuthor: function (author) {
+                return $http({
+                    method: 'GET',
+                    url: path + '/paintings/author/' + author.id,
+                    headers: {
+                        ContentType: "application/json"
+                    }
+                });
+            },
+
             addPainting: function (painting) {
                 return $http({
                     method: 'POST',

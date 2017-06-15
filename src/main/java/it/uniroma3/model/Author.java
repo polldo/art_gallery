@@ -22,6 +22,7 @@ public class Author {
     @NotNull
     private Date birthDate;
     private Date deathDate;
+    private String biography;
 
     public Author() {}
 
@@ -65,4 +66,11 @@ public class Author {
         this.deathDate = deathDate;
     }
 
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
+    }
 }

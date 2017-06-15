@@ -19,6 +19,10 @@ angular
                 templateUrl: 'static/views/author.html',
                 controller: 'AuthorCtrl'
             })
+            .when('/author-admin/', {
+                templateUrl: 'static/views/author-admin.html',
+                controller: 'AuthorAdminCtrl'
+            })
             .when('/painting/', {
                 templateUrl: 'static/views/painting.html',
                 controller: 'PaintingCtrl'

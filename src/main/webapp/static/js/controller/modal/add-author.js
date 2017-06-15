@@ -13,6 +13,12 @@ angular.module('artGallery')
             var birthDate = $scope.author.birthDate;
             $scope.newYear = parseInt($filter('date')(birthDate, "yyyy"), 10);
             $scope.newMonth = parseInt($filter('date')(birthDate, "MM"), 10);
+            var deathDate = $scope.author.deathDate;
+            if(deathDate !== undefined) {
+                $scope.newDYear = parseInt($filter('date')(deathDate, "yyyy"), 10);
+                $scope.newDMonth = parseInt($filter('date')(deathDate, "MM"), 10);
+            }
+            $scope.newBiography = $scope.author.biography;
         }
 
         $scope.getPortraitSource = function () {
@@ -25,6 +31,10 @@ angular.module('artGallery')
             $scope.author.name = $scope.newName;
             $scope.author.surname = $scope.newSurname;
             $scope.author.birthDate = new Date($scope.newYear + " " + $scope.newMonth);
+            if($scope.newDYear !== undefined && $scope.newDYear !== "")
+                $scope.author.deathDate = new Date($scope.newDYear + " " + $scope.newDMonth);
+            if($scope.newBiography !== null && $scope.newBiography !== "")
+                $scope.author.biography = $scope.newBiography;
             var upload = {
                 author: $scope.author,
                 file: $scope.newFile

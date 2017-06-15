@@ -56,7 +56,7 @@ public class PaintingController {
 	}
 
 	@RequestMapping(value = "/author/{id}", method = RequestMethod.GET)
-	public List<Painting> getPaintingById(@PathVariable Long id) {
+	public List<Painting> getPaintingByAuthorId(@PathVariable Long id) {
 		logger.info("Requested Painting by Author");
 		return paintingService.getPaintingByAuthorId(id);
 	}

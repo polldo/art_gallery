@@ -27,6 +27,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#!/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                     <li><a ng-href="#!/author"><i class="fa fa-users" aria-hidden="true"></i> Authors</a></li>
+                    <li><a ng-href="#!/author-admin"><i class="fa fa-server" aria-hidden="true"></i> Authors</a></li>
                     <li><a ng-href="#!/painting"><i class="fa fa-picture-o" aria-hidden="true"></i> Paintings</a></li>
                     <li><a ng-href="#!/painting-admin"><i class="fa fa-server" aria-hidden="true"></i> Paintings</a></li>
                     <li><a ng-href="#!/room"><i class="fa fa-server" aria-hidden="true"></i> Rooms</a></li>
@@ -61,6 +62,7 @@
 <script src="<c:url value='/static/js/controller/app.js' />"></script>
 <script src="<c:url value='/static/js/controller/home.js' />"></script>
 <script src="<c:url value='/static/js/controller/author.js' />"></script>
+<script src="<c:url value='/static/js/controller/author-admin.js' />"></script>
 <script src="<c:url value='/static/js/controller/painting.js' />"></script>
 <script src="<c:url value='/static/js/controller/painting-admin.js' />"></script>
 <script src="<c:url value='/static/js/controller/picture.js' />"></script>
