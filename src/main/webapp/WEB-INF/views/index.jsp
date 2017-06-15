@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="<c:url value='/webjars/bootstrap/3.3.7-1/css/bootstrap.css' />">
     <link rel="stylesheet" href="<c:url value='/webjars/fontawesome/4.7.0/css/font-awesome.css' />">
     <link rel="stylesheet" href="<c:url value='/static/css/custom.css' />">
+    <link rel="stylesheet" href="<c:url value='/static/css/profile.css' />">
 </head>
 
 <body ng-app="artGallery" ng-controller="AppCtrl" class="ng-cloak">

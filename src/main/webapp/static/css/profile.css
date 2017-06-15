@@ -1,0 +1,9 @@
+body{padding-top:10px;}
+
+.profilefield {  margin-bottom: 10px;margin-right: 10px;margin-left: 20%}
+
+small {
+    display: block;
+    line-height: 1.428571429;
+    color: #999;
+}

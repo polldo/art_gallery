@@ -1,24 +1,50 @@
 <form>
-<div class="panel panel-default">
-    <div class="panel-heading">Authors search</div>
-    <div class="panel-body">
-        <div ng-controller="AlertCtrl">
-            <div uib-alert ng-repeat="alt in alerts" ng-class="'alert-' + (alt.type || 'warning')" close="closeAlert($index)">
-                {{alt.message}}
+    <div class="panel panel-default">
+        <div class="panel-heading">Authors search</div>
+        <div class="panel-body">
+            <div ng-controller="AlertCtrl">
+                <div uib-alert ng-repeat="alt in alerts" ng-class="'alert-' + (alt.type || 'warning')" close="closeAlert($index)">
+                    {{alt.message}}
+                </div>
+            </div>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-model="searchParam">
+                </div>
+                <label for="buttonSelect"> by filter: </label>
+                <div class="btn-group" id="buttonSelect">
+                    <label class="btn btn-success" ng-model="filter" uib-btn-radio="'none'" >None</label>
+                    <label class="btn btn-success" ng-model="filter" uib-btn-radio="'name'" >Name</label>
+                    <label class="btn btn-success" ng-model="filter" uib-btn-radio="'surname'" >Surname</label>
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="searchAuthors()">Search</button>
+            </form>
+        </div>
+    </div>
+</form>
+
+<!--<div class="container">-->
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="author in authorList">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <img ng-src="/artgallery/portraits/id/{{author.id}}" alt="image" class="img-rounded img-responsive"
+                         onerror="this.src='/artgallery/static/images/default-profile.jpg'"/>
+                </div>
+                <div class="col-sm-6 col-md-8">
+                    <h4>{{author.name + " " + author.surname}}</h4>
+                    <p>
+                        <a href="#!/author-profile" ng-click="setCurrentAuthor(author)" class="profilefield action-icon" uib-tooltip="Go to Profile"><i class="fa fa-user-circle-o" aria-hidden="true"></i>{{"  Author Page"}}</a>
+                        <br /><br>
+                        <a href="#!/painting/" ng-click="setCurrentAuthor(author)" class="profilefield action-icon" uib-tooltip="Show Paintings"><i class="fa fa-file-image-o fa-lg edit"></i>{{"  Author Paintings"}}</a>
+                        <br /><br>
+                        <i class="profilefield glyphicon glyphicon-gift"></i>{{author.birthDate | date:'MM, yyyy'}}
+                        <br /><br>
+                        <i class="profilefield glyphicon glyphicon-gift" ng-show="author.deathDate !== null"></i>{{author.deathDate | date:'MM, yyyy'}}</p>
+                </div>
             </div>
         </div>
-        <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" ng-model="searchParam">
-            </div>
-            <label for="buttonSelect"> by filter: </label>
-            <div class="btn-group" id="buttonSelect">
-                <label class="btn btn-success" ng-model="filter" uib-btn-radio="'none'" >None</label>
-                <label class="btn btn-success" ng-model="filter" uib-btn-radio="'name'" >Name</label>
-                <label class="btn btn-success" ng-model="filter" uib-btn-radio="'surname'" >Surname</label>
-            </div>
-            <button type="submit" class="btn btn-default" ng-click="searchAuthors()">Search</button>
-        </form>
     </div>
 </div>
-</form>
+<!--</div>-->

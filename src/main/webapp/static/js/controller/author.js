@@ -7,6 +7,7 @@ angular.module('artGallery')
         $scope.filter = 'none';
         $scope.searchParam = "";
         $scope.searchAuthors = loadAuthorList;
+        $scope.setCurrentAuthor = AuthorService.setCurrentAuthor;
 
         message.eraseAlerts();
         loadAuthorList();
