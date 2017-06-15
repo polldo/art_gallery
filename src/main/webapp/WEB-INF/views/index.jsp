@@ -64,6 +64,7 @@
 <script src="<c:url value='/static/js/controller/home.js' />"></script>
 <script src="<c:url value='/static/js/controller/author.js' />"></script>
 <script src="<c:url value='/static/js/controller/author-admin.js' />"></script>
+<script src="<c:url value='/static/js/controller/author-profile.js' />"></script>
 <script src="<c:url value='/static/js/controller/painting.js' />"></script>
 <script src="<c:url value='/static/js/controller/painting-admin.js' />"></script>
 <script src="<c:url value='/static/js/controller/picture.js' />"></script>

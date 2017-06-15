@@ -23,6 +23,10 @@ angular
                 templateUrl: 'static/views/author-admin.html',
                 controller: 'AuthorAdminCtrl'
             })
+            .when('/author-profile/', {
+                templateUrl: 'static/views/author-profile.html',
+                controller: 'AuthorProfileCtrl'
+            })
             .when('/painting/', {
                 templateUrl: 'static/views/painting.html',
                 controller: 'PaintingCtrl'
