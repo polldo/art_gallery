@@ -12,6 +12,8 @@ public interface PaintingRepository extends GenericRepository<Painting, Long> {
 	public List<Painting> findPaintingsByMedium(String medium);
 
 	public List<Painting> findPaintingsByYear(Integer year);
+	
+	public List<Painting> findPaintingsByRoom_Id(Long id);
 
 	public List<Painting> findPaintingsByAuthor_Id(Long id);
 

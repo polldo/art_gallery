@@ -56,6 +56,16 @@ angular.module('artGallery')
                     }
                 });
             },
+            
+            getPaintingsByRoom: function (room) {
+                return $http({
+                    method: 'GET',
+                    url: path + '/paintings/room/' + room.id,
+                    headers: {
+                        ContentType: "application/json"
+                    }
+                });
+            },
 
             getPaintingsByAuthor: function (author) {
                 return $http({

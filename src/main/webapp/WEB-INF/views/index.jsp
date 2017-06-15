@@ -74,6 +74,7 @@
 <script src="<c:url value='/static/js/controller/modal/open-picture.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/modify-painting.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/delete-painting.js' />"></script>
+<script src="<c:url value='/static/js/controller/accordion.js' />"></script>
     <!-- Service -->
 <script src="<c:url value='/static/js/service/author.js' />"></script>
 <script src="<c:url value='/static/js/service/painting.js' />"></script>

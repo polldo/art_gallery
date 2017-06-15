@@ -5,12 +5,12 @@ angular.module('artGallery')
 
         $scope.currentAuthor = AuthorService.getCurrentAuthor();
         AuthorService.setCurrentAuthor(undefined);
-        $scope.openIndex = undefined;
+        $scope.paintingIndex = undefined;
         $scope.paintingList = undefined;
         $scope.filter = "none";
         $scope.searchParam = "";
         $scope.searchPaintings = loadPaintingList;
-        $scope.setIndex = setOpenIndex;
+        $scope.setIndex = setPaintingIndex;
 
         message.eraseAlerts();
         initAuthorsSelect();
@@ -47,9 +47,9 @@ angular.module('artGallery')
             setPaintingList([]);
         }
 
-        function setOpenIndex(index) {
-            if (index === $scope.openIndex) $scope.openIndex = undefined;
-            else $scope.openIndex = index;
+        function setPaintingIndex(index) {
+            if (index === $scope.paintingIndex) $scope.paintingIndex = undefined;
+            else $scope.paintingIndex = index;
         }
 
         function initAuthorsSelect() {
@@ -114,10 +114,7 @@ angular.module('artGallery')
                     }
                 }
             });
-            modalInstance.result.then(function () {
-            }, function (response) {
-                badResponse(response)
-            });
+            modalInstance.result.then(function () {}, function () {});
         }
 
     });
