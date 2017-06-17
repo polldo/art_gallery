@@ -29,10 +29,8 @@ public class RoomController {
 	}
 	
 	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
-	public Room getPainting(@PathVariable Long id) {
+	public Room getRoom(@PathVariable Long id) {
         logger.info("Requested Room by id");
         return roomService.getRoom(id);
 	}
-	
-
 }

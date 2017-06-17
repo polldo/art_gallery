@@ -23,50 +23,60 @@
 
     <form class="form-horizontal">
         <fieldset>
-
+		
+			<div class="row text-danger">
+                {{errName}}
+            </div>
             <!-- Name input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="nameinput">Name</label>
+                <label class="col-md-4 control-label" for="nameinput">Name*</label>
                 <div class="col-md-4">
                     <input id="nameinput" name="nameinput" type="text" placeholder="Author name" class="form-control input-md" ng-model="newName">
 
                 </div>
             </div>
 
+			<div class="row text-danger">
+                {{errSurname}}
+            </div>
             <!-- Surname input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="surnameinput">Surname</label>
+                <label class="col-md-4 control-label" for="surnameinput">Surname*</label>
                 <div class="col-md-4">
                     <input id="surnameinput" name="surnameinput" type="text" placeholder="surname" class="form-control input-md" ng-model="newSurname">
 
                 </div>
             </div>
 
+			<div class="row text-danger">
+                {{errMonth + "\t" + errYear}}
+            </div>
             <!-- Birthdate input-->
-            <label class="col-md-2 control-label" for="birthdateinput">Birthdate</label>
+            <label class="col-md-2 control-label" for="birthdateinput">Birthdate*</label>
             <div class="form-group" id="birthdateinput" name="birthdateinput">
                 <label class="col-md-2 control-label" for="monthinput">Month</label>
                 <div class="col-md-2">
-                    <input id="monthinput" name="monthinput" type="number" min="1" max="12" placeholder="" class="form-control input-md" ng-model="newMonth">
-                    <span class="help-block">birthdate</span>
+                    <input id="monthinput" name="monthinput" type="text" placeholder="" class="form-control input-md" ng-model="newMonth">
                 </div>
                 <label class="col-md-1 control-label" for="yearinput">Year</label>
                 <div class="col-md-2">
-                    <input id="yearinput" name="yearinput" type="number" min="0" max="3000" placeholder="" class="form-control input-md" ng-model="newYear">
+                    <input id="yearinput" name="yearinput" type="text" placeholder="" class="form-control input-md" ng-model="newYear">
                 </div>
             </div>
 
+			<div class="row text-danger">
+                {{errDMonth + "\t" + errDYear}}
+            </div>
             <!-- Deathdate input-->
             <label class="col-md-2 control-label" for="deathdateinput">Deathdate</label>
             <div class="form-group" id="deathdateinput" name="deathdateinput">
                 <label class="col-md-2 control-label" for="monthdinput">Month</label>
                 <div class="col-md-2">
-                    <input id="monthdinput" name="monthdinput" type="number" min="1" max="12" placeholder="" class="form-control input-md" ng-model="newDMonth">
-                    <span class="help-block">deathdate</span>
+                    <input id="monthdinput" name="monthdinput" type="text" placeholder="" class="form-control input-md" ng-model="newDMonth">
                 </div>
                 <label class="col-md-1 control-label" for="yeardinput">Year</label>
                 <div class="col-md-2">
-                    <input id="yeardinput" name="yeardinput" type="number" min="0" max="3000" placeholder="" class="form-control input-md" ng-model="newDYear">
+                    <input id="yeardinput" name="yeardinput" type="text" placeholder="" class="form-control input-md" ng-model="newDYear">
                 </div>
             </div>
 
@@ -78,7 +88,6 @@
                 </div>
             </div>
 
-
             <!-- Picture input-->
             <div class="form-group jumbotron">
                 <label class="col-md-4 control-label">Current Author Picture</label>
@@ -88,6 +97,8 @@
                 </div>
                 <input type="file" file-model="newFile"/>
             </div>
+            
+            <div class="row text-info">Fields marked by * are required</div>
 
         </fieldset>
     </form>

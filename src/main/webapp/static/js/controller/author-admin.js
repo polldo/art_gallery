@@ -2,7 +2,8 @@
 
 angular.module('artGallery')
     .controller('AuthorAdminCtrl', function ($scope, $uibModal, AuthorService, PaintingService, message, fileUpload) {
-
+    	
+    	$scope.alertInfo = undefined;
         $scope.authorList = undefined;
         $scope.authorFilter = {
             selected: "no filter",
@@ -36,6 +37,7 @@ angular.module('artGallery')
         }
 
         function responseToAlert(alertType, details) {
+        	$scope.alertInfo = [];
             message.addAlert(alertType, details);
         }
 
@@ -108,7 +110,12 @@ angular.module('artGallery')
                             }
                         },
                         function (response) {
-                            responseToAlert("danger", badDetails);
+                        	responseToAlert("danger", badDetails);
+                        	var errMessage = [];
+                            for(var i = 0, size = response.data.length; i < size ; i++) {
+                            	errMessage[i] = response.data[i].defaultMessage;
+                            }
+                            $scope.alertInfo = errMessage;                           
                         });
             }, function () {
             });
@@ -183,7 +190,12 @@ angular.module('artGallery')
                             }
                         },
                         function (response) {
-                            responseToAlert("danger", badDetails);
+                        	responseToAlert("danger", badDetails);
+                        	var errMessage = [];
+                            for(var i = 0, size = response.data.length; i < size ; i++) {
+                            	errMessage[i] = response.data[i].defaultMessage;
+                            }
+                            $scope.alertInfo = errMessage;                           
                         });
             }, function () {
             });

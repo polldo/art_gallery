@@ -8,6 +8,11 @@
             <div ng-controller="AlertCtrl">
                 <div uib-alert ng-repeat="alt in alerts" ng-class="'alert-' + (alt.type || 'warning')" close="closeAlert($index)">
                     {{alt.message}}
+                    <br>
+                    <div ng-repeat="info in alertInfo"> 
+                    {{info}}
+                    <br>
+                    </div>
                 </div>
             </div>
             <form class="navbar-form navbar-left" role="search">
