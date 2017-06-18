@@ -44,7 +44,7 @@
 
 <div class="footer">
     <div class="container">
-          <p><span class="glyphicon glyphicon-heart">er footer</span></p>
+    	<span class="glyphicon glyphicon-heart">er footer</span>
     </div>
 </div>
 
