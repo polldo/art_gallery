@@ -8,5 +8,10 @@ angular.module('artGallery')
         if($scope.author === undefined)
             $location.url('/author/');
 
+        PaintingService.getPaintingsByAuthor($scope.author).then(
+        function (resp) {
+            resp.data.splice(4);
+            $scope.fivePaintingList = resp.data;
+        });
 
     });

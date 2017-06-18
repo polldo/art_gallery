@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Login</h3>
+</div>
+<div class="modal-body col-md-12" id="modal-body">
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="container jumbotron col-md-6 col-md-offset-3">
+
+                <div class="form-group">
+                    <label>Username:</label>
+                    <input type="text" class="form-control" placeholder="Username" ng-model="logUser">
+                </div>
+
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" class="form-control" placeholder="Password" ng-model="logPass">
+                </div>
+                <br>
+                <button class="btn btn-success" ng-click="ok()">Login</button>
+
+                <hr>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <!--<button class="btn btn-primary" type="button" ng-click="ok()">LOGIN</button>-->
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>

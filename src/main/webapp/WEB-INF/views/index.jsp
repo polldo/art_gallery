@@ -28,10 +28,14 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#!/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                     <li><a ng-href="#!/author"><i class="fa fa-users" aria-hidden="true"></i> Authors</a></li>
-                    <li><a ng-href="#!/author-admin"><i class="fa fa-server" aria-hidden="true"></i> Authors</a></li>
+                    <li><a ng-href="#!/author-admin" ng-if="isAuth"><i class="fa fa-server" aria-hidden="true"></i> Authors</a></li>
                     <li><a ng-href="#!/painting"><i class="fa fa-picture-o" aria-hidden="true"></i> Paintings</a></li>
-                    <li><a ng-href="#!/painting-admin"><i class="fa fa-server" aria-hidden="true"></i> Paintings</a></li>
+                    <li><a ng-href="#!/painting-admin" ng-if="isAuth"><i class="fa fa-server" aria-hidden="true"></i> Paintings</a></li>
                     <li><a ng-href="#!/room"><i class="fa fa-server" aria-hidden="true"></i> Rooms</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="" ng-click="login()" ng-if="!isAuth"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                    <li><a href="" ng-click="logout()" ng-if="isAuth"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -70,6 +74,7 @@
 <script src="<c:url value='/static/js/controller/picture.js' />"></script>
 <script src="<c:url value='/static/js/controller/room.js' />"></script>
 <script src="<c:url value='/static/js/controller/alert.js' />"></script>
+<script src="<c:url value='/static/js/controller/modal/login.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/add-author.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/delete-author.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/open-picture.js' />"></script>
@@ -77,6 +82,8 @@
 <script src="<c:url value='/static/js/controller/modal/delete-painting.js' />"></script>
 <script src="<c:url value='/static/js/controller/accordion.js' />"></script>
     <!-- Service -->
+<script src="<c:url value='/static/js/service/auth.js' />"></script>
+<script src="<c:url value='/static/js/service/tokenInterceptor.js' />"></script>
 <script src="<c:url value='/static/js/service/author.js' />"></script>
 <script src="<c:url value='/static/js/service/painting.js' />"></script>
 <script src="<c:url value='/static/js/service/message.js' />"></script>
