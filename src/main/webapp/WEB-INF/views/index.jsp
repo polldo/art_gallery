@@ -48,8 +48,8 @@
 </div>
 
 <footer class="footer">
-    <div class="container">
-    	<span class="glyphicon glyphicon-heart">er footer</span>
+	<div align="center">
+    	©2017 Artgallery - Contacts: blablabla@gmail.it
     </div>
 </footer>
 

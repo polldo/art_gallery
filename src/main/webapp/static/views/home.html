@@ -1,1 +1,11 @@
-<span>130 SI VOLA {{saluto}}</span>
+<div ng-controller="HomeCtrl" align="center">
+	<div style="height: auto; width: 800px; max-width: 80%">
+		<div uib-carousel active="active" interval="5000">
+			<div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+				<a ng-href="{{slide.onclick}}">
+					<img ng-src="{{slide.image}}" style="margin:auto; max-width: 100%">
+				</a>
+        	</div>
+    	</div>
+	</div>
+</div>
