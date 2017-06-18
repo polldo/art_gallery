@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<c:url value='/webjars/fontawesome/4.7.0/css/font-awesome.css' />">
     <link rel="stylesheet" href="<c:url value='/static/css/custom.css' />">
     <link rel="stylesheet" href="<c:url value='/static/css/profile.css' />">
+    <link rel="stylesheet" href="<c:url value='/static/css/footer.css' />">
 </head>
 
 <body ng-app="artGallery" ng-controller="AppCtrl" class="ng-cloak">
@@ -42,11 +43,11 @@
     <div ng-view=""></div>
 </div>
 
-<div class="footer">
+<footer class="footer">
     <div class="container">
     	<span class="glyphicon glyphicon-heart">er footer</span>
     </div>
-</div>
+</footer>
 
 <!-- Vendors dependencies -->
 <script src="<c:url value='/webjars/angularjs/1.6.4/angular.js' />"></script>
