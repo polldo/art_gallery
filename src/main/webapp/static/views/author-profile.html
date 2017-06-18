@@ -41,17 +41,18 @@
                     </div>
                 </div>
             </div>
-            <div class="bs-callout bs-callout-danger">
-                <h4>LISTA OPERE A CAZZO</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. Quis verear mel ne. Munere vituperata vis cu,
-                    te pri duis timeam scaevola, nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
-                </p>
-                <p>
-                    Odio recteque expetenda eum ea, cu atqui maiestatis cum. Te eum nibh laoreet, case nostrud nusquam an vis.
-                    Clita debitis apeirian et sit, integre iudicabit elaboraret duo ex. Nihil causae adipisci id eos.
-
-                </p>
+            <div class="bs-callout bs-callout-danger" ng-show="fivePaintingList.length > 0">
+                <h4>Paintings</h4>
+                <div class="container">
+                    <div class="col-sm-2 col-md-2" ng-repeat="painting in fivePaintingList">
+                        <div class="thumbnail" height="40" width="40">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <img class="embed-responsive-item" ng-src="/artgallery/pictures/id/{{painting.id}}" alt="image"
+                                     onerror="this.src='/artgallery/static/images/default.png'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
