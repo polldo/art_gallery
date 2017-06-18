@@ -1,16 +1,19 @@
 package it.uniroma3.controller;
 
+import it.uniroma3.message.MessageResponse;
 import it.uniroma3.model.Author;
 import it.uniroma3.service.AuthorService;
 import it.uniroma3.service.PaintingService;
 import it.uniroma3.service.PortraitService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -62,8 +65,18 @@ public class AuthorController {
         if(bindingResult.hasErrors()) {
             return ResponseEntity.badRequest().body(bindingResult.getAllErrors());
         }
-        Author authorAdded = authorService.addAuthor(author);
-        return ResponseEntity.ok(authorAdded);
+        try {
+        	Author authorAdded = authorService.addAuthor(author);
+        	return ResponseEntity.ok(authorAdded);
+        }
+        catch(DataIntegrityViolationException e) {
+        	List<MessageResponse> messages = new ArrayList<MessageResponse>();
+        	messages.add(new MessageResponse("Author already exist"));
+        	return ResponseEntity.badRequest().body(messages);
+        }
+        catch(Exception e) {
+        	return ResponseEntity.badRequest().body("Unknown error");
+        }
     }
 
     @RequestMapping(value = "/{name}", method = RequestMethod.POST)

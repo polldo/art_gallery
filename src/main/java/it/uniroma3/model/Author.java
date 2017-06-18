@@ -2,6 +2,8 @@ package it.uniroma3.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import java.util.Date;
 
 /**
@@ -13,11 +15,13 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotNull
+    @NotNull(message = "Name can't be null")
+    @Size(min=1, message = "Name is required")
     private String name;
-    @NotNull
+    @NotNull(message = "Surname can't be null")
+    @Size(min=1, message = "Surname is required")
     private String surname;
-    @NotNull
+    @NotNull(message = "BirthDate can't be null")
     private Date birthDate;
     private Date deathDate;
     private String biography;

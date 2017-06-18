@@ -13,21 +13,22 @@ public class Painting {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@NotNull
-	@Size(min=1)
+	@NotNull(message = "Title can't be null")
+	@Size(min=1, message = "Title is required")
 	private String title;
-	@NotNull
+	@NotNull(message = "Height can't be null")
 	private Integer height;
-	@NotNull
+	@NotNull(message = "Width can't be null")
 	private Integer width;
-	@NotNull
-	@Size(min=1)
+	@NotNull(message = "Medium can't be null")
+	@Size(min=1, message = "Medium is required")
 	private String medium;
-	@NotNull
+	@NotNull(message = "Year can't be null")
 	private Integer year;
+	@NotNull(message = "Author can't be null")
 	@ManyToOne
 	private Author author;
-	
+
 	@ManyToOne
 	private Room room;
 

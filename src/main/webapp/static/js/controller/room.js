@@ -7,8 +7,8 @@ angular.module('artGallery')
         $scope.paintingList = undefined;
         $scope.roomIndex = undefined;
         $scope.paintingIndex = undefined;
-        $scope.open = openIndex
-        $scope.setIndex = setPaintingIndex
+        $scope.open = openIndex;
+        $scope.setIndex = setPaintingIndex;
         
         loadRoomList();
 

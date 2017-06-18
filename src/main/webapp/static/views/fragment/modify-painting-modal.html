@@ -5,46 +5,59 @@
 
     <form class="form-horizontal">
         <fieldset>
-
-            <!-- Text input-->
+			
+			 <div class="row text-danger">
+                {{errTitle}}
+            </div>
+            <!-- Title input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="Title">Title</label>
+                <label class="col-md-4 control-label" for="Title">Title*</label>
                 <div class="col-md-4">
                     <input id="Title" name="Title" type="text" placeholder="" class="form-control input-md" ng-model="newTitle" required="">
                 </div>
             </div>
 
-            <!-- Text input-->
+            <div class="row text-danger">
+                {{errHeight + "\t" + errWidth}}
+            </div>
+            <!-- Dimensions input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="height">Height</label>
+                <label class="col-md-4 control-label" for="height">Height*</label>
                 <div class="col-md-2">
                     <input id="height" name="height" type="text" placeholder="" class="form-control input-md" ng-model="newHeight">
-                </div>
+                </div>               
 
-                <label class="col-md-1 control-label" for="width">Width</label>
+                <label class="col-md-1 control-label" for="width">Width*</label>
                 <div class="col-md-2">
                     <input id="width" name="width" type="text" placeholder="" class="form-control input-md" ng-model="newWidth">
-
                 </div>
             </div>
 
-            <!-- Text input-->
+            <div class="row text-danger">
+                {{errMedium}}
+            </div>            
+            <!-- Medium input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="Medium">Medium</label>
+                <label class="col-md-4 control-label" for="Medium">Medium*</label>
                 <div class="col-md-4">
                     <input id="Medium" name="Medium" type="text" placeholder="" class="form-control input-md" ng-model="newMedium" required="">
-
                 </div>
             </div>
 
-            <!-- Text input-->
+            <div class="row text-danger">
+                {{errYear}}
+            </div>
+            <!-- Year input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="year">Year</label>
+                <label class="col-md-4 control-label" for="year">Year*</label>
                 <div class="col-md-4">
-                    <input type="number" min="0" max="3000" id="year" name="year" placeholder="" class="form-control input-md" ng-model="newYear">
+                    <input type="text" id="year" name="year" placeholder="" class="form-control input-md" ng-model="newYear">
                 </div>
             </div>
 
+            <div class="row text-danger">
+                {{errAuthor}}
+            </div>
             <!-- Prepended text-->
             <div class="form-group" ng-show="hasAuthor()">
                 <label class="col-md-1 control-label" for="currentauthor"></label>
@@ -57,9 +70,9 @@
                 </div>
             </div>
 
-            <!-- Select Basic -->
+            <!-- Select Author -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="selectautor">Change Author</label>
+                <label class="col-md-4 control-label" for="selectautor">Change Author*</label>
                 <div class="col-md-4">
                     <select name="selectautor" class="form-control" id="selectautor" ng-model="paintingAuthor.selected">
                         <option ng-repeat="author in paintingAuthor.availableAuthors" ng-value="author">{{author.name + " " + author.surname}}</option>
@@ -75,11 +88,10 @@
                         <span class="input-group-addon">Current Room</span>
                         <input id="currentroom" name="currentroom" class="form-control" placeholder="{{oldRoom.name}}" type="text">
                     </div>
-
                 </div>
             </div>
 
-            <!-- Select Basic -->
+            <!-- Select Room -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="selectroom">Change Room</label>
                 <div class="col-md-4">
@@ -97,7 +109,9 @@
                          onerror="this.src='/artgallery/static/images/default.png'"/>
                 </div>
                 <input type="file" file-model="newFile"/>
-            </div>
+            </div>     
+
+			<div class="row text-info">Fields marked by * are required</div>
 
         </fieldset>
     </form>
