@@ -12,6 +12,15 @@ angular.module('artGallery')
         $scope.searchPaintings = loadPaintingList;
         $scope.setIndex = setPaintingIndex;
         $scope.setCurrentAuthor = AuthorService.setCurrentAuthor;
+        $scope.setPage = function (n) {
+            $scope.currentPage = n;
+        };
+        $scope.numberPaintingsInPage = "9";
+        $scope.$watch(function(){
+            return $scope.numberPaintingsInPage;
+        }, function(newNumber, oldNumber) {
+            loadPaginatedList($scope.paintingList);
+        });
 
         message.eraseAlerts();
         initAuthorsSelect();
@@ -40,6 +49,7 @@ angular.module('artGallery')
 
         function okResponse(response) {
             setPaintingList(response.data);
+            loadPaginatedList(response.data);
         }
 
         function badResponse(response) {
@@ -84,6 +94,7 @@ angular.module('artGallery')
         }
 
         function loadPaintingList() {
+            setPaintingIndex(undefined);
             var request;
             var param = getSearchParam();
             var filter = getSelectedFilter();
@@ -104,6 +115,21 @@ angular.module('artGallery')
             request.then(okResponse, badResponse);
         }
 
+        function loadPaginatedList(list) {
+            var paintingList = angular.copy(list);
+            var paginatedList = [];
+            var numberPaintingsInPage;
+            numberPaintingsInPage = $scope.numberPaintingsInPage;
+            var i = 0;
+            while (paintingList.length > 0) {
+                paginatedList[i] = paintingList.splice(0, numberPaintingsInPage);
+                i++;
+            }
+            $scope.paginatedList = paginatedList;
+            $scope.totalItems = i*10;
+            $scope.currentPage = 1;
+        }
+
         $scope.openPictureModal = function (id_picture) {
             var modalInstance = $uibModal.open({
                 templateUrl: "static/views/fragment/open-picture-modal.html",
@@ -115,7 +141,9 @@ angular.module('artGallery')
                     }
                 }
             });
-            modalInstance.result.then(function () {}, function () {});
+            modalInstance.result.then(function () {
+            }, function () {
+            });
         }
 
     });
