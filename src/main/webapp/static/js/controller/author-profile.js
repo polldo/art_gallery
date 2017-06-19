@@ -7,10 +7,11 @@ angular.module('artGallery')
         AuthorService.setCurrentAuthor(undefined);
         if($scope.author === undefined)
             $location.url('/author/');
+        $scope.setCurrentAuthor = AuthorService.setCurrentAuthor;
 
         PaintingService.getPaintingsByAuthor($scope.author).then(
         function (resp) {
-            resp.data.splice(4);
+            resp.data.splice(3);
             $scope.fivePaintingList = resp.data;
         });
 

@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="bs-callout bs-callout-danger" ng-show="fivePaintingList.length > 0">
-                <h4>Paintings</h4>
+                <h4><a href="#!/painting/" ng-click="setCurrentAuthor(author)" class="action-icon" uib-tooltip="Show Paintings"><i class="fa fa-file-image-o fa-lg edit"></i>Paintings</a></h4>
                 <div class="container">
                     <div class="col-sm-2 col-md-2" ng-repeat="painting in fivePaintingList">
                         <div class="thumbnail" height="40" width="40">
