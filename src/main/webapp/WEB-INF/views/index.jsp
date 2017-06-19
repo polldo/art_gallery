@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<c:url value='/static/css/images.css' />">
     <link rel="stylesheet" href="<c:url value='/static/css/profile.css' />">
     <link rel="stylesheet" href="<c:url value='/static/css/footer.css' />">
+    <link rel="stylesheet" href="<c:url value='/static/css/info.css' />">
 </head>
 
 <body ng-app="artGallery" ng-controller="AppCtrl" class="ng-cloak">
@@ -49,7 +50,7 @@
 
 <footer class="footer">
 	<div align="center">
-    	©2017 Artgallery - Paolo Calao | Marco Tais
+    	Â©2017 Artgallery - Paolo Calao | Marco Tais
     </div>
 </footer>
 
