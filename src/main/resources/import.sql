@@ -17,6 +17,9 @@ insert into author(id, name, surname, birthDate) values (nextval('hibernate_sequ
 insert into author(id, name, surname, birthDate) values (nextval('hibernate_sequence'), 'Marco', 'Prova', NOW());
 
 insert into room(id, name) values (nextval('hibernate_sequence'), '1');
+insert into room(id, name) values (nextval('hibernate_sequence'), '2');
+insert into room(id, name) values (nextval('hibernate_sequence'), '3');
+insert into room(id, name) values (nextval('hibernate_sequence'), '4');
 insert into room(id, name) values (nextval('hibernate_sequence'), 'Magazzino');
 
 insert into painting(id, title, height, width, medium, year, author_id, room_id) values (nextval('hibernate_sequence'), 'Epl', '10', '15', 'Olio su tela', '1923', '1', '5');

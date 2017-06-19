@@ -33,9 +33,19 @@
 	height: 150px;
 }
 
-#medium-portrait-wrapper {
+#pmedium-portrait-wrapper {
 	width: 200px;
 	height: 200px;
+}
+
+#medium-portrait-wrapper img {
+	width: 200px;
+	height: 200px;
+}
+
+#big-portrait-wrapper {
+	width: 250px;
+	height: 250px;
 }
 
 #big-portrait-wrapper img {
