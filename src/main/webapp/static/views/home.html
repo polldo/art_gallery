@@ -1,4 +1,4 @@
-<div ng-controller="HomeCtrl" align="center">
+<div ng-controller="CarouselCtrl" align="center">
 	<div style="height: auto; width: 800px; max-width: 80%">
 		<div uib-carousel active="active" interval="5000">
 			<div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
@@ -9,3 +9,18 @@
     	</div>
 	</div>
 </div>
+<br>
+<div>
+	<div container>
+		<h3>Featured artists: </h3>
+		<div class="row" align="center">
+		<div class="col-md-4" ng-repeat="aut in authors track by aut.id">
+			<a ng-href=#!/author-profile ng-click="setCurrentAuthor(aut.author)">
+				<div class="image-wrapper" id="big-portrait-wrapper">
+                    <img ng-src="/artgallery/portraits/id/{{aut.author.id}}" alt="image" class="img-rounded img-responsive"
+                    onerror="this.src='/artgallery/static/images/default-profile.jpg'"/>
+                </div>
+			</a>
+	</div>
+</div>
+<br>

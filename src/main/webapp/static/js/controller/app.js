@@ -32,7 +32,7 @@ angular.module('artGallery')
                                         "Authorization": "Basic " + $scope.encoded
                                     },
                                 }
-                                $http(req).then(function(){alert("Login succeeded!")}, function() {alert("Authentication gone wrong!")});
+                                $http(req).then(function(){alert("Login succeeded!")}, function() {});
                     }, function () {
                     });
                 };

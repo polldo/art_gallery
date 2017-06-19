@@ -5,7 +5,7 @@
     <title>Art Gallery</title>
     <link rel="stylesheet" href="<c:url value='/webjars/bootstrap/3.3.7-1/css/bootstrap.css' />">
     <link rel="stylesheet" href="<c:url value='/webjars/fontawesome/4.7.0/css/font-awesome.css' />">
-    <link rel="stylesheet" href="<c:url value='/static/css/custom.css' />">
+    <link rel="stylesheet" href="<c:url value='/static/css/images.css' />">
     <link rel="stylesheet" href="<c:url value='/static/css/profile.css' />">
     <link rel="stylesheet" href="<c:url value='/static/css/footer.css' />">
 </head>
@@ -27,12 +27,12 @@
 
             <div class="collapse navbar-collapse" id="js-navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#!/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                     <li><a ng-href="#!/author"><i class="fa fa-users" aria-hidden="true"></i> Authors</a></li>
-                    <li><a ng-href="#!/author-admin" ng-if="isAuth"><i class="fa fa-server" aria-hidden="true"></i> Authors</a></li>
+                    <li><a ng-href="#!/author-admin" ng-if="isAuth"><i class="fa fa-wrench" aria-hidden="true"></i> Authors(Administration)</a></li>
                     <li><a ng-href="#!/painting"><i class="fa fa-picture-o" aria-hidden="true"></i> Paintings</a></li>
-                    <li><a ng-href="#!/painting-admin" ng-if="isAuth"><i class="fa fa-server" aria-hidden="true"></i> Paintings</a></li>
-                    <li><a ng-href="#!/room"><i class="fa fa-server" aria-hidden="true"></i> Rooms</a></li>
+                    <li><a ng-href="#!/painting-admin" ng-if="isAuth"><i class="fa fa-wrench" aria-hidden="true"></i> Paintings(Administration)</a></li>
+                    <li><a ng-href="#!/room"><i class="fa fa-th-large" aria-hidden="true"></i> Rooms</a></li>
+                    <li><a ng-href="#!/info"><i class="fa fa-info" aria-hidden="true"></i> Info</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="" ng-click="login()" ng-if="!isAuth"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
@@ -49,7 +49,7 @@
 
 <footer class="footer">
 	<div align="center">
-    	©2017 Artgallery - Contacts: blablabla@gmail.it
+    	©2017 Artgallery - Paolo Calao | Marco Tais
     </div>
 </footer>
 
@@ -81,7 +81,7 @@
 <script src="<c:url value='/static/js/controller/modal/open-picture.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/modify-painting.js' />"></script>
 <script src="<c:url value='/static/js/controller/modal/delete-painting.js' />"></script>
-<script src="<c:url value='/static/js/controller/accordion.js' />"></script>
+<script src="<c:url value='/static/js/controller/carousel.js' />"></script>
     <!-- Service -->
 <script src="<c:url value='/static/js/service/auth.js' />"></script>
 <script src="<c:url value='/static/js/service/tokenInterceptor.js' />"></script>

@@ -13,7 +13,7 @@
                 </div>
                 <label for="buttonSelect"> by filter: </label>
                 <div class="btn-group" id="buttonSelect">
-                    <label class="btn btn-danger" ng-model="filter" uib-btn-radio="'none'" >None</label>
+                    <label class="btn btn-danger" ng-model="filter" ng-click="searchAuthors()" uib-btn-radio="'none'" >None</label>
                     <label class="btn btn-success" ng-model="filter" uib-btn-radio="'name'" >Name</label>
                     <label class="btn btn-success" ng-model="filter" uib-btn-radio="'surname'" >Surname</label>
                 </div>
@@ -29,8 +29,10 @@
         <div class="well well-sm">
             <div class="row">
                 <div class="col-sm-6 col-md-4">
-                    <img ng-src="/artgallery/portraits/id/{{author.id}}" alt="image" class="img-rounded img-responsive"
-                         onerror="this.src='/artgallery/static/images/default-profile.jpg'"/>
+                	<div class="image-wrapper" id="portrait-wrapper">
+                    	<img ng-src="/artgallery/portraits/id/{{author.id}}" alt="image" class="img-rounded img-responsive"
+                        	 onerror="this.src='/artgallery/static/images/default-profile.jpg'"/>
+                        </div>
                 </div>
                 <div class="col-sm-6 col-md-8">
                     <h4>{{author.name + " " + author.surname}}</h4>

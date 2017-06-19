@@ -43,6 +43,9 @@ angular
                 templateUrl: 'static/views/picture.html',
                 controller: 'PictureCtrl'
             })
+             .when('/info/', {
+                templateUrl: 'static/views/info.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
