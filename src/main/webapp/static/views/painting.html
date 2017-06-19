@@ -45,7 +45,9 @@
        			aria-hidden="true"></i></md-button>
             	<h4>
                	 	<p>{{"Title: " + painting.title}}</p>
-               		<p>{{"Author: " + painting.author.name + " " + painting.author.surname}}</p>
+               		<p>{{"Author: "}}
+                        <a href="#!/author-profile" ng-click="setCurrentAuthor(painting.author)" >{{painting.author.name + " " + painting.author.surname}}</a>
+                    </p>
                 </h4>
   				<div ng-show="paintingIndex == $index">
   					<hr>

@@ -11,6 +11,7 @@ angular.module('artGallery')
         $scope.searchParam = "";
         $scope.searchPaintings = loadPaintingList;
         $scope.setIndex = setPaintingIndex;
+        $scope.setCurrentAuthor = AuthorService.setCurrentAuthor;
 
         message.eraseAlerts();
         initAuthorsSelect();
