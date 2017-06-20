@@ -13,7 +13,7 @@
         <div class="col-sm-8">
             <h2>About Us</h2>
             <h4>Paolo Calao :  <a href="mailto:paolo.calao@gmail.com"> paolo.calao@gmail.com </a></h4>
-            <h4>Marco Tais : <a href="mailto:mar.tais@stud.uniroma3.it""> mar.tais@stud.uniroma3.it </a></h4>
+            <h4>Marco Tais : <a href="mailto:mar.tais@stud.uniroma3.it"> mar.tais@stud.uniroma3.it </a></h4>
         </div>
         <div class="col-sm-2">
             <span class="glyphicon glyphicon-user logo"></span>
@@ -39,6 +39,72 @@
                 nascita e data di morte.L’utente generico può accedere alle informazioni della galleria attraverso
                 diversi percorsi di navigazione, opportunamente predisposti (ad esempio, per autore, oppure per anno,
                 etc.)</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="container-casiduso">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Casi d'uso</h2>
+            <p> <strong>Autenticazione amministratore: </strong>          	
+				<br> Scenario principale di successo:
+				<br> 1 - L'amministratore inizia la procedura di autenticazione
+				<br> 2 - L'amministatore inserisce username e password
+				<br> 3 - Il sistema autentica l'amministratore
+				<br> 
+				<br> <strong> Inserimento di un author: </strong> 
+				<br> Scenario principale di successo:
+				<br> 1 - Un amministratore autenticato inizia la procedura di inserimento di un author
+				<br> 2 - L'amministratore inserisce i dati relativi all'author ed eventualmente un'immagine per il suo portrait e conferma l'inserimento
+				<br> 3 - Il sistema registra l'author
+				<br> Estensioni:
+				<br> 2a - L'amministratore annulla l'inserimento dell'author
+				<br> 
+				<br> <strong> Modifica di author: </strong> 
+				<br> Scenario principale di successo:
+				<br> 1 - Un amministratore autenticato vuole modificare un author
+				<br> 2 - L'amministratore richiede gli author presenti nel sistema
+				<br> 3 - Il sistema mostra l'elenco degli author presenti
+				<br> 4 - L'amministratore seleziona l'author da modificare e seleziona l'attivita' modifica author
+				<br> 5 - L'amministratore inserisce i nuovi dati relativi all'author eventualmente un'immagine per il suo portrait e conferma la modifica
+				<br> 6 - Il sistema registra la modifica dell'author
+				<br> Estensioni:
+				<br> 5a - L'amministratore annulla la modifica dell'author
+				<br> 
+				<br> <strong> Rimozione di un author: </strong> 
+				<br> Scenario principale di successo:
+				<br> 1 - Un amministratore autenticato vuole rimuovere un author
+				<br> 2 - L'amministratore richiede gli author presenti nel sistema
+				<br> 3 - Il sistema mostra l'elenco degli author presenti
+				<br> 4 - L'amministratore seleziona l'author da rimuovere e  seleziona l'attivita' rimozione author
+				<br> 5 - L'amministratore conferma la rimozione dell'author
+				<br> 6 - Il sistema registra la rimozione dell'author
+				<br> Estensioni:
+				<br> 5a - L'amministratore annulla la cancellazione dell'author
+				<br> 
+				<br> <strong> Inserimento di un painting di un author: </strong> 
+				<br> Scenario principale di successo:
+				<br> 1 - Un amministratore autenticato vuole inserire un painting di un author
+				<br> 2 - L'amministratore richiede gli author presenti nel sistema
+				<br> 3 - Il sistema mostra l'elenco degli author presenti
+				<br> 4 - L'amministratore seleziona un author e  seleziona l'attivita' inserimento painting
+				<br> 5 - L'amministratore inserisce i dati relativi al painting ed eventualmente un'immagine come picture associata ad esso e conferma l'inserimento
+				<br> 6 - Il sistema registra il painting
+				<br> Estensioni:
+				<br> 5a - L'amministratore annulla l'inserimento del painting
+				<br> 
+				<br> <strong> Consultazione dei painting di un author: </strong> 
+				<br> Scenario principale di successo:
+				<br> 1 - Un utente vuole consultare le opere di un autore
+				<br> 2 - L'utente richiede gli author presenti nel sistema
+				<br> 3 - Il sistema mostra l'elenco degli author presenti
+				<br> 4 - L'utente seleziona un author
+				<br> 5 - Il sistema mostra l'elenco dei painting dell'author selezionato         	
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list logo"></span>
         </div>
     </div>
 </div>

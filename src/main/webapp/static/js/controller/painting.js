@@ -121,7 +121,7 @@ angular.module('artGallery')
             var numberPaintingsInPage;
             numberPaintingsInPage = $scope.numberPaintingsInPage;
             var i = 0;
-            while (paintingList.length > 0) {
+            while (paintingList !== undefined && paintingList !== null && paintingList.length > 0) {
                 paginatedList[i] = paintingList.splice(0, numberPaintingsInPage);
                 i++;
             }

@@ -51,7 +51,7 @@
 
 <footer class="footer">
 	<div align="center">
-    	ï¿½2017 Artgallery - Paolo Calao | Marco Tais
+    	©2017 Artgallery - Paolo Calao | Marco Tais
     </div>
 </footer>
 
