@@ -8,6 +8,7 @@ angular.module('artGallery')
     	$scope.errMonth = undefined;
     	$scope.errDYear = undefined;
     	$scope.errDMonth = undefined;
+    	$scope.errBiography = undefined;
 
         $scope.author = author;
         if($scope.author.id === undefined)
@@ -90,7 +91,7 @@ angular.module('artGallery')
         			valid = false;
         		}
         	}
-        	if ($scope.newBiography.length > 255 ) {
+        	if ($scope.newBiography !== undefined && $scope.newBiography !== null && $scope.newBiography.length > 255 ) {
         		$scope.errBiography = "Max 255 characters";
         		valid = false;
         	}
