@@ -38,12 +38,14 @@
                     <h4>{{author.name + " " + author.surname}}</h4>
                     <p>
                         <a href="#!/author-profile" ng-click="setCurrentAuthor(author)" class="profilefield action-icon" uib-tooltip="Go to Profile"><i class="fa fa-user-circle-o" aria-hidden="true"></i>{{"  Author Page"}}</a>
-                        <br /><br>
+                        <br><br>
                         <a href="#!/painting/" ng-click="setCurrentAuthor(author)" class="profilefield action-icon" uib-tooltip="Show Paintings"><i class="fa fa-file-image-o fa-lg edit"></i>{{"  Author Paintings"}}</a>
-                        <br /><br>
+                        <br><br>
                         <i class="profilefield glyphicon glyphicon-gift"></i>{{author.birthDate | date:'MM, yyyy'}}
-                        <br /><br>
-                        <i class="profilefield fa fa-circle" ng-show="author.deathDate !== null"></i>{{author.deathDate | date:'MM, yyyy'}}</p>
+                        <br><br>
+                        <i class="profilefield fa fa-circle" ng-show="author.deathDate !== null"></i>{{author.deathDate | date:'MM, yyyy'}}
+                        <br ng-show="author.deathDate == null">
+                        </p>
                 </div>
             </div>
         </div>

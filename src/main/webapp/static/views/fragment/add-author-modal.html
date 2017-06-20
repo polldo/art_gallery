@@ -62,11 +62,14 @@
                 </div>
             </div>
 
+			<div class="row text-danger">
+                {{errBiography}}
+            </div>
             <!-- Textarea -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="bioinput">Biography</label>
                 <div class="col-md-4">
-                    <textarea class="form-control" id="bioinput" name="bioinput" ng-model="newBiography">default</textarea>
+                    <textarea class="form-control" id="bioinput" name="bioinput" style="resize: none;" ng-model="newBiography">default</textarea>
                 </div>
             </div>
 

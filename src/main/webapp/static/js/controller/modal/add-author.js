@@ -44,6 +44,7 @@ angular.module('artGallery')
         	$scope.errMonth = undefined;
         	$scope.errDYear = undefined;
         	$scope.errDMonth = undefined;
+        	$scope.errBiography = undefined;
         	var valid = true;
         	if ($scope.newName === undefined || $scope.newName === "") {
         		$scope.errName = "Name is required";
@@ -88,6 +89,10 @@ angular.module('artGallery')
         			$scope.errDMonth = "Invalid month (accepted values: 1-12)";
         			valid = false;
         		}
+        	}
+        	if ($scope.newBiography.length > 255 ) {
+        		$scope.errBiography = "Max 255 characters";
+        		valid = false;
         	}
         	return valid;
         }
