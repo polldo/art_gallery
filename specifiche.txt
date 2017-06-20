@@ -1,0 +1,55 @@
+Casi d'uso:
+Autenticazione amministratore:
+Scenario principale di successo:
+1 - L'amministratore inizia la procedura di autenticazione
+2 - L'amministatore inserisce username e password
+3 - Il sistema autentica l'amministratore
+
+Inserimento di un author:
+Scenario principale di successo:
+1 - Un amministratore autenticato inizia la procedura di inserimento di un author
+2 - L'amministratore inserisce i dati relativi all'author ed eventualmente un'immagine per il suo portrait e conferma l'inserimento
+3 - Il sistema registra l'author
+Estensioni:
+2a - L'amministratore annulla l'inserimento dell'author
+
+Modifica di author:
+Scenario principale di successo:
+1 - Un amministratore autenticato vuole modificare un author
+2 - L'amministratore richiede gli author presenti nel sistema
+3 - Il sistema mostra l'elenco degli author presenti
+4 - L'amministratore seleziona l'author da modificare e seleziona l'attività modifica author
+5 - L'amministratore inserisce i nuovi dati relativi all'author eventualmente un'immagine per il suo portrait e conferma la modifica
+6 - Il sistema registra la modifica dell'author
+Estensioni:
+5a - L'amministratore annulla la modifica dell'author
+
+Rimozione di un author:
+Scenario principale di successo:
+1 - Un amministratore autenticato vuole rimuovere un author
+2 - L'amministratore richiede gli author presenti nel sistema
+3 - Il sistema mostra l'elenco degli author presenti
+4 - L'amministratore seleziona l'author da rimuovere e  seleziona l'attività rimozione author
+5 - L'amministratore conferma la rimozione dell'author
+6 - Il sistema registra la rimozione dell'author
+Estensioni:
+5a - L'amministratore annulla la cancellazione dell'author
+
+Inserimento di un painting di un author:
+Scenario principale di successo:
+1 - Un amministratore autenticato vuole inserire un painting di un author
+2 - L'amministratore richiede gli author presenti nel sistema
+3 - Il sistema mostra l'elenco degli author presenti
+4 - L'amministratore seleziona un author e  seleziona l'attività inserimento painting
+5 - L'amministratore inserisce i dati relativi al painting ed eventualmente un'immagine come picture associata ad esso e conferma l'inserimento
+6 - Il sistema registra il painting
+Estensioni:
+5a - L'amministratore annulla l'inserimento del painting
+
+Consultazione dei painting di un author:
+Scenario principale di successo:
+1 - Un utente vuole consultare le opere di un autore
+2 - L'utente richiede gli author presenti nel sistema
+3 - Il sistema mostra l'elenco degli author presenti
+4 - L'utente seleziona un author
+5 - Il sistema mostra l'elenco dei painting dell'author selezionato
